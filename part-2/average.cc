@@ -16,6 +16,7 @@ int main(int argc, char* argv[]) {
   }
 
   double total = 0.0;
+  int count = 0;
   for (size_t i = 1; i < arguments.size(); ++i) {    
     try {
       double num = std::stod(arguments[i]);
