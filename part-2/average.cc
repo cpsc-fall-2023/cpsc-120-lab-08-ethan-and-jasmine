@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
 
   for (const auto& argument : std::vector<std::string>(arguments.begin() + 1, arguments.edn())) {    
     try {
-      double num = std::stod(arguments[i]);
+      double num = std::stod(argument);
       total += num;
       count++;
     } catch (const std::invalid_argument& e) {
