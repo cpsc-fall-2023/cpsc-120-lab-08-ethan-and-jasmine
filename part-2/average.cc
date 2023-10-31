@@ -18,20 +18,20 @@ int main(int argc, char* argv[]) {
   double total = 0.0;
   for (size_t i = 1; i < arguments.size(); ++i) {    
     try {
-        double num = std::stod(arguments[i]);
-        total += num;
-        count++;
+      double num = std::stod(arguments[i]);
+      total += num;
+      count++;
     } catch (const std::invalid_argument& e) {
-        return 1;
+      return 1;
     } catch (const std::out_of_range& e) {
       return 1;
     }
   }
 
   if (count > 0) {
-      double average = total / count;
-      std::cout << std::fixed << std::setprecision(2);
-      std::cout << "average = " << average << std::endl;
+    double average = total / count;
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "average = " << average << std::endl;
   } else {
     return 1;
   }
