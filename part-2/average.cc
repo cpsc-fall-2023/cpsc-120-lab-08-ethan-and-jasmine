@@ -1,4 +1,7 @@
-// TODO: Add the required header
+// Ethan Tirtorahardjo
+// etirtorahardjo@csu.fullerton.edu
+// @EthanTirtorahardjo
+// Partners: @jazorie
 
 #include <iostream>
 #include <string>
@@ -7,10 +10,36 @@
 int main(int argc, char* argv[]) {
   std::vector<std::string> arguments{argv, argv + argc};
 
-  // TODO: Validate that there is at least one command line argument.
+  if (arguments.size() <= 1) {
+    std::cerr << "error: you must supply at least one number\n";
+    return 1;
+  }
+
+  double total = 0.0;
+  for (size_t i = 1; i < arguments.size(); ++i) {    
+    try {
+        double num = std::stod(arguments[i]);
+        total += num;
+        count++;
+    } catch (const std::invalid_argument& e) {
+        return 1;
+    } catch (const std::out_of_range& e) {
+      return 1;
+    }
+  }
+
+  if (count > 0) {
+      double average = total / count;
+      std::cout << std::fixed << std::setprecision(2);
+      std::cout << "average = " << average << std::endl;
+  } else {
+    return 1;
+  }
+
+  // DONE: Validate that there is at least one command line argument.
   // If not, print an error message and return a non-zero value.
 
-  // TODO: Write a for-each loop to sum (add up) all of the command line
+  // DONE: Write a for-each loop to sum (add up) all of the command line
   // arguments.
   // Use a double or float type so that your program preserves fractional
   // values.
@@ -19,11 +48,11 @@ int main(int argc, char* argv[]) {
   // Each argument is a std::string. You will need to convert each string into
   // a number with the std::stod or std::stof function.
 
-  // TODO: After the loop has finished summing the arguments, calculate the
+  // DONE: After the loop has finished summing the arguments, calculate the
   // average of the values. Recall that the average is the total value divided
   // by the number of values.
 
-  // TODO: Use cout to print out a message of the form
+  // DONE: Use cout to print out a message of the form
   // average = *AVERAGE*
   // on its own line.
 
