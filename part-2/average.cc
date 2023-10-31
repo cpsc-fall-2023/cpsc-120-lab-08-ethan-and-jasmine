@@ -31,7 +31,6 @@ int main(int argc, char* argv[]) {
 
   if (count > 0) {
     double average = total / count;
-    std::cout << std::fixed << std::setprecision(2);
     std::cout << "average = " << average << std::endl;
   } else {
     return 1;
