@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
   int count = 0;
 
   for (const auto& argument :
-      std::vector<std::string>(arguments.begin() + 1, arguments.end())) {    
+       std::vector<std::string>(arguments.begin() + 1, arguments.end())) {    
     try {
       double num = std::stod(argument);
       total += num;
